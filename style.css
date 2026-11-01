@@ -263,13 +263,19 @@ details .in{padding:0 0 20px;font-size:13.5px;color:var(--ink2)}
 @media(max-width:420px){.pricebar .live{font-size:0;gap:0}.pricebar .live .dot{margin-inline-end:2px}}
 @media(max-width:1000px){.slide .shade{background:linear-gradient(0deg,rgba(15,9,3,.72),rgba(15,9,3,.25) 55%,rgba(0,0,0,0) 75%) !important}.slide .eyebrow{color:#EBD7AE}}
 
-/* ===== brand colour themes (client can switch) ===== */
-:root,html[data-theme="slate"]{--em:#5C5E66;--em2:#4D4F56;--on:#fff;--on2:rgba(255,255,255,.82);--acc:#E9BF2E;--rule:rgba(255,255,255,.18);--logo-f:none}
-html[data-theme="taupe"]{--em:#85786B;--em2:#74685C;--on:#fff;--on2:rgba(255,255,255,.86);--acc:#F7DD8A;--rule:rgba(255,255,255,.22);--logo-f:brightness(0) invert(1)}
-html[data-theme="gold"]{--em:#DEAD05;--em2:#C99C04;--on:#232427;--on2:rgba(35,36,39,.8);--acc:#3B3C41;--rule:rgba(35,36,39,.2);--logo-f:brightness(0) opacity(.85)}
+/* ===== brand colour themes: top bar and footer chosen separately ===== */
+:root{--em:#5C5E66;--em2:#4D4F56;--on:#fff;--on2:rgba(255,255,255,.82);--acc:#E9BF2E;--rule:rgba(255,255,255,.18);--logo-f:none}
+html[data-bar="slate"] .pricebar{--em:#5C5E66;--em2:#4D4F56;--on:#fff;--on2:rgba(255,255,255,.82);--acc:#E9BF2E;--rule:rgba(255,255,255,.18);--logo-f:none}
+html[data-foot="slate"] footer,html[data-foot="slate"] .story,html[data-foot="slate"] .btn.solid{--em:#5C5E66;--em2:#4D4F56;--on:#fff;--on2:rgba(255,255,255,.82);--acc:#E9BF2E;--rule:rgba(255,255,255,.18);--logo-f:none}
+html[data-bar="taupe"] .pricebar{--em:#85786B;--em2:#74685C;--on:#fff;--on2:rgba(255,255,255,.86);--acc:#F7DD8A;--rule:rgba(255,255,255,.22);--logo-f:brightness(0) invert(1)}
+html[data-foot="taupe"] footer,html[data-foot="taupe"] .story,html[data-foot="taupe"] .btn.solid{--em:#85786B;--em2:#74685C;--on:#fff;--on2:rgba(255,255,255,.86);--acc:#F7DD8A;--rule:rgba(255,255,255,.22);--logo-f:brightness(0) invert(1)}
+html[data-bar="gold"] .pricebar{--em:#DEAD05;--em2:#C99C04;--on:#232427;--on2:rgba(35,36,39,.8);--acc:#3B3C41;--rule:rgba(35,36,39,.2);--logo-f:brightness(0) opacity(.85)}
+html[data-foot="gold"] footer,html[data-foot="gold"] .story,html[data-foot="gold"] .btn.solid{--em:#DEAD05;--em2:#C99C04;--on:#232427;--on2:rgba(35,36,39,.8);--acc:#3B3C41;--rule:rgba(35,36,39,.2);--logo-f:brightness(0) opacity(.85)}
 .story .eyebrow{color:var(--acc)}
 .pricebar,footer,.story,.btn.solid{transition:background-color .5s,color .5s}
-.swatch{position:fixed;left:18px;bottom:18px;z-index:80;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:40px;padding:8px 14px 8px 10px;box-shadow:0 8px 30px rgba(0,0,0,.08);font-size:12px;color:var(--ink2)}
-.swatch button{width:26px;height:26px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--line);cursor:pointer;padding:0}
+.swatch{position:fixed;left:18px;bottom:18px;z-index:80;display:grid;gap:8px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:18px;padding:10px 14px;box-shadow:0 8px 30px rgba(0,0,0,.08);font-size:12px;color:var(--ink2)}
+.swatch .row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.swatch .row div{display:flex;gap:8px}
+.swatch button{width:24px;height:24px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--line);cursor:pointer;padding:0}
 .swatch button.on{box-shadow:0 0 0 2px var(--ink)}
-@media(max-width:1000px){.swatch{bottom:84px;left:12px}.swatch span{display:none}}
+@media(max-width:1000px){.swatch{bottom:84px;left:12px;padding:8px 10px;font-size:11px}.swatch button{width:22px;height:22px}}
